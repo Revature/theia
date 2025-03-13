@@ -1,0 +1,46 @@
+{
+  "extends": "../../configs/base.tsconfig",
+  "compilerOptions": {
+    "composite": true,
+    "rootDir": "src",
+    "outDir": "lib"
+  },
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "../../dev-packages/ovsx-client"
+    },
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../file-search"
+    },
+    {
+      "path": "../filesystem"
+    },
+    {
+      "path": "../monaco"
+    },
+    {
+      "path": "../output"
+    },
+    {
+      "path": "../search-in-workspace"
+    },
+    {
+      "path": "../test"
+    },
+    {
+      "path": "../toolbar"
+    },
+    {
+      "path": "../vsx-registry"
+    },
+    {
+      "path": "../workspace"
+    }
+  ]
+}

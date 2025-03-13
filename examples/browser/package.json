@@ -22,7 +22,8 @@
   },
   "theiaPluginsDir": "../../plugins",
   "dependencies": {
-    "@theia/api-provider-sample": "1.59.0",
+    "@theia/vsx-server": "0.0.0",
+    "@theia/revature": "0.0.0",
     "@theia/bulk-edit": "1.59.0",
     "@theia/callhierarchy": "1.59.0",
     "@theia/console": "1.59.0",
