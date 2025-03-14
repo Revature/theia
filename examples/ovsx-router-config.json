@@ -1,7 +1,7 @@
 {
   "registries": {
     "public": "https://open-vsx.org/",
-    "mock": "${self}/mock-open-vsx/"
+    "mock": "${self}/open-vsx/"
   },
   "use": [
     "mock",

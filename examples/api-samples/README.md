@@ -24,7 +24,7 @@ The extension is for reference and test purposes only and is not published on `n
 
 These samples contain a mock implementation of an OpenVSX server. This is done
 for testing purposes only. It is currently hosted at
-`<backend-host>/mock-open-vsx/api/...`.
+`<backend-host>/open-vsx/api/...`.
 
 ## Additional Information
 

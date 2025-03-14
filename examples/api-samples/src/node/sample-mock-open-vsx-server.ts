@@ -49,7 +49,7 @@ export class SampleMockOpenVsxServer implements BackendApplicationContribution {
     private ready = this.readyDeferred.promise;
 
     get mockServerPath(): string {
-        return '/mock-open-vsx';
+        return '/open-vsx';
     }
 
     get pluginsDbPath(): string {
@@ -164,7 +164,7 @@ export class SampleMockOpenVsxServer implements BackendApplicationContribution {
                         namespaceAccess: 'public',
                         namespaceUrl: url.namespaceUrl(namespace),
                         publishedBy: {
-                            loginName: 'mock-open-vsx'
+                            loginName: 'open-vsx'
                         },
                         reviewCount: 0,
                         reviewsUrl: url.extensionReviewsUrl(namespace, name),
