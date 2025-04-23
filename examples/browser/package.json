@@ -11,12 +11,14 @@
           "files.enableTrash": false,
           "security.workspace.trust.enabled": false
         },
-        "reloadOnReconnect": true
+        "reloadOnReconnect": true,
+        "warnOnPotentiallyInsecureHostPattern": false
       }
     },
     "backend": {
       "config": {
-        "frontendConnectionTimeout": 3000
+        "frontendConnectionTimeout": 3000,
+        "warnOnPotentiallyInsecureHostPattern": false
       }
     }
   },
