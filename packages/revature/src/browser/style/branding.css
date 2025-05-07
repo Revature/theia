@@ -32,3 +32,63 @@
   -webkit-mask: url("window-icon.svg");
   mask: url("window-icon.svg");
 }
+
+* {
+  --ui-scale-factor: 0.85;
+  font-size: calc(1rem * var(--ui-scale-factor)) !important;
+}
+
+svg {
+  --ui-scale-factor: 0.85;
+  transform: scale(var(--ui-scale-factor)) !important;
+  transform-origin: center center;
+}
+
+li.p-MenuBar-item:nth-child(9) .p-MenuBar-itemLabel {
+  color: var(--vscode-button-foreground) !important;
+}
+
+#theia\:menubar>ul.p-MenuBar-content>li.p-MenuBar-item:nth-child(9) {
+  /* Existing styles */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.2s ease !important;
+}
+
+#theia\:menubar>ul.p-MenuBar-content>li.p-MenuBar-item:nth-child(9):hover {
+  /* Existing hover styles */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+#theia\:menubar>ul.p-MenuBar-content>li.p-MenuBar-item:nth-child(9) {
+  background-color: #0078D7 !important;
+  border-radius: 8px !important;
+  padding: 2px 10px !important;
+  margin: 0 2px !important;
+}
+
+#theia\:menubar>ul.p-MenuBar-content>li.p-MenuBar-item:nth-child(9)>div.p-MenuBar-itemLabel {
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+/* Add hover effect */
+#theia\:menubar>ul.p-MenuBar-content>li.p-MenuBar-item:nth-child(9):hover {
+  background-color: #0066CC !important;
+}
+
+/* Fix for tab icons */
+.p-TabBar-tab .codicon,
+li[id^="shell-tab"] .codicon,
+li[class*="p-TabBar-tab"] .codicon {
+  font-size: 22px !important;
+  /* Adjust size as needed */
+}
+
+/* Keep SVG scaled properly within tabs */
+li[id^="shell-tab"] svg,
+.p-TabBar-tab svg {
+  width: 16px !important;
+  height: 16px !important;
+  /* This maintains your successful SVG scaling */
+}
