@@ -38,6 +38,7 @@ import { AIAgentConfigurationViewContribution } from './ai-configuration/ai-conf
 import { AIConfigurationContainerWidget } from './ai-configuration/ai-configuration-widget';
 import { AIVariableConfigurationWidget } from './ai-configuration/variable-configuration-widget';
 import { ContextFilesVariableContribution } from '../common/context-files-variable';
+import { CheckMyCodeChatAgent } from '../common/check-my-code-agent';
 
 export default new ContainerModule(bind => {
     bind(PreferenceContribution).toConstantValue({ schema: WorkspacePreferencesSchema });
@@ -61,6 +62,10 @@ export default new ContainerModule(bind => {
     bind(CommandChatAgent).toSelf().inSingletonScope();
     bind(Agent).toService(CommandChatAgent);
     bind(ChatAgent).toService(CommandChatAgent);
+
+    bind(CheckMyCodeChatAgent).toSelf().inSingletonScope();
+    bind(Agent).toService(CheckMyCodeChatAgent);
+    bind(ChatAgent).toService(CheckMyCodeChatAgent);
 
     bind(DefaultChatAgentId).toConstantValue({ id: OrchestratorChatAgentId });
     bind(FallbackChatAgentId).toConstantValue({ id: UniversalChatAgentId });

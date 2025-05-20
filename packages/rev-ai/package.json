@@ -1,10 +1,11 @@
 {
   "private": true,
-  "name": "@theia/dev-server-button",
+  "name": "@theia/rev-ai",
   "version": "0.0.0",
-  "description": "Theia - Example code to demonstrate Theia API",
+  "description": "Theia - AI integration for PEP-specific purposes",
   "dependencies": {
     "@theia/ai-chat": "1.59.0",
+    "@theia/ai-openai": "1.59.0",
     "@theia/ai-chat-ui": "1.59.0",
     "@theia/ai-core": "1.59.0",
     "@theia/core": "1.59.0",

@@ -22,12 +22,8 @@ import {
 import { inject, injectable, interfaces } from '@theia/core/shared/inversify';
 
 const DevServerCommand: Command = {
-    id: 'dev-server-button',
-    label: 'Open port in browser...'
-};
-const AIMenuCommand: Command = {
-    id: 'dev-server-button',
-    label: 'Open port in browser...'
+    id: 'ai-button',
+    label: 'AI features'
 };
 
 @injectable()
@@ -41,30 +37,6 @@ export class BrowserMenuCommandContribution implements CommandContribution {
 
     registerCommands(commands: CommandRegistry): void {
 
-        commands.registerCommand(DevServerCommand, {
-            execute: () => {
-                commands.executeCommand('cloud-ide-extension.openDevServer');
-            }
-        });
-    }
-
-}
-
-@injectable()
-export class BrowserMenuContribution implements MenuContribution {
-    registerMenus(menus: MenuModelRegistry): void {
-        setTimeout(() => {
-
-            const subMenuPath = [...MAIN_MENU_BAR, 'DevServerMenu'];
-            menus.registerSubmenu(subMenuPath, 'Browser', {
-                order: 'zzy'
-            });
-            menus.registerMenuAction(subMenuPath, {
-                commandId: DevServerCommand.id,
-                order: '0'
-            });
-
-        }, 10000);
     }
 
 }
@@ -74,17 +46,18 @@ export class AIMenuContribution implements MenuContribution {
     registerMenus(menus: MenuModelRegistry): void {
         setTimeout(() => {
 
-            const subMenuPath = [...MAIN_MENU_BAR, 'AIMenu'];
-            menus.registerSubmenu(subMenuPath, 'CheckMyCode', {
+            const subMenuPath = [...MAIN_MENU_BAR, 'CheckMyCode'];
+            menus.registerSubmenu(subMenuPath, 'Browser', {
                 order: 'zzz'
             });
             menus.registerMenuAction(subMenuPath, {
-                commandId: AIMenuCommand.id,
+                commandId: DevServerCommand.id,
                 order: '0'
             });
 
         }, 10000);
     }
+
 }
 
 /**
