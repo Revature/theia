@@ -125,6 +125,7 @@
     "ms-python.python.testing",
     "ms-python.python.unittest",
     "ms-python.python.pytest",
-    "ms-python.vscode-pylance"
+    "ms-python.vscode-pylance",
+    "vscode.python"
   ]
 }
