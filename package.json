@@ -122,8 +122,8 @@
     "vscode.github-authentication",
     "vscode.microsoft-authentication",
     "ms-vscode.references-view",
-    "ms-python.vscode-pylance",
-    "ms-python.python.test",
-    "ms-python.python.testing"
+    "ms-python.python.testing",
+    "ms-python.python.unittest",
+    "ms-python.python.pytest"
   ]
 }
