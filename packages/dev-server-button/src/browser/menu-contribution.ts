@@ -25,9 +25,21 @@ const DevServerCommand: Command = {
     id: 'dev-server-button',
     label: 'Open port in browser...'
 };
-const AIMenuCommand: Command = {
-    id: 'dev-server-button',
-    label: 'Open port in browser...'
+const ToggleChatCommand: Command = {
+    id: 'toggle-chat',
+    label: 'Toggle chat'
+};
+const ImproveMyCode: Command = {
+    id: 'improve-my-code',
+    label: 'Improve my code'
+};
+const CheckMyCode: Command = {
+    id: 'check-my-code',
+    label: 'Check my code'
+};
+const SuggestTestCases: Command = {
+    id: 'suggest-test-cases',
+    label: 'Suggest test cases'
 };
 
 @injectable()
@@ -46,8 +58,27 @@ export class BrowserMenuCommandContribution implements CommandContribution {
                 commands.executeCommand('cloud-ide-extension.openDevServer');
             }
         });
+        commands.registerCommand(CheckMyCode, {
+            execute: () => {
+                commands.executeCommand('cloud-ide-extension.checkMyCode');
+            }
+        });
+        commands.registerCommand(ImproveMyCode, {
+            execute: () => {
+                commands.executeCommand('cloud-ide-extension.improveMyCode');
+            }
+        });
+        commands.registerCommand(SuggestTestCases, {
+            execute: () => {
+                commands.executeCommand('cloud-ide-extension.suggestTestCases');
+            }
+        });
+        commands.registerCommand(ToggleChatCommand, {
+            execute: () => {
+                commands.executeCommand('view.toggleChat');
+            }
+        });
     }
-
 }
 
 @injectable()
@@ -75,12 +106,24 @@ export class AIMenuContribution implements MenuContribution {
         setTimeout(() => {
 
             const subMenuPath = [...MAIN_MENU_BAR, 'AIMenu'];
-            menus.registerSubmenu(subMenuPath, 'CheckMyCode', {
+            menus.registerSubmenu(subMenuPath, 'AI features', {
                 order: 'zzz'
             });
             menus.registerMenuAction(subMenuPath, {
-                commandId: AIMenuCommand.id,
+                commandId: CheckMyCode.id,
                 order: '0'
+            });
+            menus.registerMenuAction(subMenuPath, {
+                commandId: ImproveMyCode.id,
+                order: '1'
+            });
+            menus.registerMenuAction(subMenuPath, {
+                commandId: SuggestTestCases.id,
+                order: '2'
+            });
+            menus.registerMenuAction(subMenuPath, {
+                commandId: ToggleChatCommand.id,
+                order: '3'
             });
 
         }, 10000);
@@ -104,7 +147,9 @@ export class PlaceholderMenuNode implements MenuNode {
 
 }
 
+// Fix: Bind both menu contributions
 export const bindSampleMenu = (bind: interfaces.Bind) => {
     bind(CommandContribution).to(BrowserMenuCommandContribution).inSingletonScope();
     bind(MenuContribution).to(BrowserMenuContribution).inSingletonScope();
+    bind(MenuContribution).to(AIMenuContribution).inSingletonScope();  // Add this line
 };
