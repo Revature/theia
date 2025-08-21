@@ -180,12 +180,12 @@ blockquote {
 
 .theia-preload::after {
     content: "";
-    background-image: url("./bjork.jpg");
-    background-size: 60px 60px;
+    background-image: url("./loading.gif");
+    background-size: 300px 300px;
     background-repeat: no-repeat;
     background-position: center;
-    width: 60px;
-    height: 60px;
+    width: 300px;
+    height: 300px;
     animation: none;
 }
 
