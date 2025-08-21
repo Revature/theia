@@ -92,7 +92,3 @@ li[id^="shell-tab"] svg,
   height: 16px !important;
   /* This maintains your successful SVG scaling */
 }
-
-.theia-preload {
-  display: none !important;
-}

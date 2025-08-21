@@ -7,6 +7,7 @@
     "frontend": {
       "config": {
         "applicationName": "Revature IDE",
+        "preloadTemplate": "./preload.html",
         "preferences": {
           "files.enableTrash": false,
           "security.workspace.trust.enabled": false
@@ -20,7 +21,12 @@
         "frontendConnectionTimeout": 3000,
         "warnOnPotentiallyInsecureHostPattern": false
       }
-    }
+    },
+    "generator": {
+            "config": {
+                "preloadTemplate": "./preload.html"
+            }
+        }
   },
   "theiaPluginsDir": "../../plugins",
   "dependencies": {
