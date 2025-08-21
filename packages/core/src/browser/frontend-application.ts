@@ -74,7 +74,7 @@ export class FrontendApplication {
      */
     async start(): Promise<void> {
         const startup = this.backendStopwatch.start('frontend');
-
+        
         await this.measure('startContributions', () => this.startContributions(), 'Start frontend contributions', false);
         this.stateService.state = 'started_contributions';
 
