@@ -172,7 +172,7 @@ blockquote {
 
 .theia-preload::after {
     content: "";
-    background-image: url("https://your-domain.com/spinner.gif");
+    background-image: url("./bjork.jpg");
     background-size: 60px 60px;
     background-repeat: no-repeat;
     background-position: center;
