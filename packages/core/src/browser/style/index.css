@@ -161,14 +161,24 @@ blockquote {
 }
 
 .theia-preload {
-    background: transparent !important;
-    pointer-events: none;
-    /* Allow clicks to pass through */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50000;
+    /* ← This covers everything */
 }
 
 .theia-preload::after {
-    display: none !important;
-    /* Hide the spinner */
+    content: "";
+    background-image: url("https://your-domain.com/spinner.gif");
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    animation: none;
 }
 
 @keyframes theia-preload-rotate {
