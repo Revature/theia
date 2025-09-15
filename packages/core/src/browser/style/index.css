@@ -181,11 +181,11 @@ blockquote {
 .theia-preload::after {
     content: "";
     background-image: url("./loading.gif");
-    background-size: 130px 162px;
+    background-size: 250px 250px;
     background-repeat: no-repeat;
     background-position: center;
-    width: 130px;
-    height: 162px;
+    width: 250px;
+    height: 250px;
     animation: none;
 }
 
