@@ -119,7 +119,6 @@
     "vscode.github",
     "vscode.github-authentication",
     "vscode.microsoft-authentication",
-    "ms-vscode.references-view",
-    "ms-python.python"
+    "ms-vscode.references-view"
   ]
 }
