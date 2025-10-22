@@ -1,25 +1,14 @@
 {
   "private": true,
-  "name": "@theia/vsx-server",
+  "name": "@theia/run-tests-button",
   "version": "0.0.0",
-  "description": "Theia - VSX server",
+  "description": "Theia - Run Tests Button",
   "dependencies": {
-    "@theia/core": "1.59.0",
-    "@theia/file-search": "1.59.0",
-    "@theia/filesystem": "1.59.0",
-    "@theia/monaco": "1.59.0",
-    "@theia/monaco-editor-core": "1.96.302",
-    "@theia/output": "1.59.0",
-    "@theia/ovsx-client": "1.59.0",
-    "@theia/search-in-workspace": "1.59.0",
-    "@theia/toolbar": "1.59.0",
-    "@theia/vsx-registry": "1.59.0",
-    "@theia/workspace": "1.59.0"
+    "@theia/core": "1.59.0"
   },
   "theiaExtensions": [
     {
-      "frontend": "lib/browser/api-samples-frontend-module",
-      "backend": "lib/node/api-samples-backend-module"
+      "frontend": "lib/run-tests-button-frontend-module"
     }
   ],
   "keywords": [

@@ -151,5 +151,6 @@ export class PlaceholderMenuNode implements MenuNode {
 export const bindSampleMenu = (bind: interfaces.Bind) => {
     bind(CommandContribution).to(BrowserMenuCommandContribution).inSingletonScope();
     bind(MenuContribution).to(BrowserMenuContribution).inSingletonScope();
-    bind(MenuContribution).to(AIMenuContribution).inSingletonScope();  // Add this line
+    // AI features button is disabled
+    // bind(MenuContribution).to(AIMenuContribution).inSingletonScope();
 };

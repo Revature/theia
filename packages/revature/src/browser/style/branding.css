@@ -44,6 +44,41 @@ svg {
   transform-origin: center center;
 }
 
+/* Run Tests button styling (8th menu item) */
+li.p-MenuBar-item:nth-child(8) .p-MenuBar-itemLabel {
+  color: var(--vscode-button-foreground) !important;
+}
+
+#theia\:menubar>ul.p-MenuBar-content>li.p-MenuBar-item:nth-child(8) {
+  /* Existing styles */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.2s ease !important;
+}
+
+#theia\:menubar>ul.p-MenuBar-content>li.p-MenuBar-item:nth-child(8):hover {
+  /* Existing hover styles */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3) !important;
+  transform: translateY(-1px) !important;
+}
+
+#theia\:menubar>ul.p-MenuBar-content>li.p-MenuBar-item:nth-child(8) {
+  background-color: #28a745 !important;
+  border-radius: 8px !important;
+  padding: 2px 10px !important;
+  margin: 0 2px !important;
+}
+
+#theia\:menubar>ul.p-MenuBar-content>li.p-MenuBar-item:nth-child(8)>div.p-MenuBar-itemLabel {
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+/* Add hover effect */
+#theia\:menubar>ul.p-MenuBar-content>li.p-MenuBar-item:nth-child(8):hover {
+  background-color: #218838 !important;
+}
+
+/* Browser button styling (9th menu item) */
 li.p-MenuBar-item:nth-child(9) .p-MenuBar-itemLabel {
   color: var(--vscode-button-foreground) !important;
 }
