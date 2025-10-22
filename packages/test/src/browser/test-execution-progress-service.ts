@@ -14,7 +14,7 @@
 // SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0
 // *****************************************************************************
 
-import { inject, injectable } from '@theia/core/shared/inversify';
+import { inject, injectable, optional } from '@theia/core/shared/inversify';
 import { Widget } from '@theia/core/lib/browser';
 import { TestResultViewContribution } from './view/test-result-view-contribution';
 import { TestViewContribution } from './view/test-view-contribution';
@@ -29,17 +29,17 @@ export const TestExecutionProgressService = Symbol('TestExecutionProgressService
 @injectable()
 export class DefaultTestExecutionProgressService implements TestExecutionProgressService {
 
-    @inject(TestResultViewContribution)
-    protected readonly testResultView: TestResultViewContribution;
+    @inject(TestResultViewContribution) @optional()
+    protected readonly testResultView?: TestResultViewContribution;
 
-    @inject(TestViewContribution)
-    protected readonly testView: TestViewContribution;
+    @inject(TestViewContribution) @optional()
+    protected readonly testView?: TestViewContribution;
 
     @inject(TestPreferences)
     protected readonly testPreferences: TestPreferences;
 
     async onTestRunRequested(preserveFocus: boolean): Promise<void> {
-        if (!preserveFocus) {
+        if (!preserveFocus && this.testResultView) {
             const openTesting = this.testPreferences['testing.openTesting'];
             if (openTesting === 'openOnTestStart') {
                 this.openTestResultView();
@@ -47,7 +47,7 @@ export class DefaultTestExecutionProgressService implements TestExecutionProgres
         }
     }
 
-    async openTestResultView(): Promise<Widget> {
-        return this.testResultView.openView({ activate: true });
+    async openTestResultView(): Promise<Widget | undefined> {
+        return this.testResultView?.openView({ activate: true });
     }
 }
