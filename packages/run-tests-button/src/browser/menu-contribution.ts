@@ -34,9 +34,8 @@ export class RunTestsMenuCommandContribution implements CommandContribution {
     registerCommands(commands: CommandRegistry): void {
         commands.registerCommand(RunTestsCommand, {
             execute: () => {
-                // Execute a VSCode extension command for running tests
-                // Replace 'your-extension.runTests' with the actual command from your test extension
-                commands.executeCommand('your-extension.runTests');
+                // Execute the cloud IDE test command
+                commands.executeCommand('cloud-ide-test.runTests');
             }
         });
     }
@@ -46,13 +45,11 @@ export class RunTestsMenuCommandContribution implements CommandContribution {
 export class RunTestsMenuContribution implements MenuContribution {
     registerMenus(menus: MenuModelRegistry): void {
         setTimeout(() => {
-            const subMenuPath = [...MAIN_MENU_BAR, 'RunTestsMenu'];
-            menus.registerSubmenu(subMenuPath, 'Run Tests', {
-                order: 'zzx' // Order it right before 'Browser' (which is 'zzy')
-            });
-            menus.registerMenuAction(subMenuPath, {
+            // Register as a direct menu action (not a submenu) so it executes on click
+            menus.registerMenuAction(MAIN_MENU_BAR, {
                 commandId: RunTestsCommand.id,
-                order: '0'
+                label: 'Run Tests',
+                order: 'zzx' // Order it right before 'Browser' (which is 'zzy')
             });
         }, 10000);
     }
