@@ -98,13 +98,14 @@ export default new ContainerModule(bind => {
         }
     })).inSingletonScope();
 
-    bindViewContribution(bind, TestViewContribution);
-    bindViewContribution(bind, TestRunViewContribution);
-    bindViewContribution(bind, TestResultViewContribution);
-    bindViewContribution(bind, TestOutputViewContribution);
-    bind(FrontendApplicationContribution).toService(TestViewContribution);
-    bind(TabBarToolbarContribution).toService(TestViewContribution);
-    bind(TabBarToolbarContribution).toService(TestRunViewContribution);
+    // Test view contributions disabled - hide test icon from sidebar
+    // bindViewContribution(bind, TestViewContribution);
+    // bindViewContribution(bind, TestRunViewContribution);
+    // bindViewContribution(bind, TestResultViewContribution);
+    // bindViewContribution(bind, TestOutputViewContribution);
+    // bind(FrontendApplicationContribution).toService(TestViewContribution);
+    // bind(TabBarToolbarContribution).toService(TestViewContribution);
+    // bind(TabBarToolbarContribution).toService(TestRunViewContribution);
     bind(TestExecutionStateManager).toSelf().inSingletonScope();
     bind(TestOutputUIModel).toSelf().inSingletonScope();
     bind(TestExecutionProgressService).to(DefaultTestExecutionProgressService).inSingletonScope();
