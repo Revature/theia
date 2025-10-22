@@ -18,23 +18,23 @@ import '../../../src/browser/style/index.css';
 
 import { interfaces, ContainerModule, Container } from '@theia/core/shared/inversify';
 import {
-    bindViewContribution, FrontendApplicationContribution,
+    // bindViewContribution, FrontendApplicationContribution,
     WidgetFactory, ViewContainer,
     WidgetManager, createTreeContainer
 } from '@theia/core/lib/browser';
 import { TestTree, TestTreeWidget } from './test-tree-widget';
-import { TestViewContribution, TEST_VIEW_CONTAINER_ID, TEST_VIEW_CONTAINER_TITLE_OPTIONS, TEST_VIEW_CONTEXT_MENU } from './test-view-contribution';
+import { /* TestViewContribution, */ TEST_VIEW_CONTAINER_ID, TEST_VIEW_CONTAINER_TITLE_OPTIONS, TEST_VIEW_CONTEXT_MENU } from './test-view-contribution';
 import { TestService, TestContribution, DefaultTestService } from '../test-service';
 import { bindContributionProvider } from '@theia/core';
-import { TabBarToolbarContribution } from '@theia/core/lib/browser/shell/tab-bar-toolbar';
+// import { TabBarToolbarContribution } from '@theia/core/lib/browser/shell/tab-bar-toolbar';
 import { TestExecutionStateManager } from './test-execution-state-manager';
 import { TestResultWidget } from './test-result-widget';
 import { TestOutputWidget } from './test-output-widget';
-import { TestOutputViewContribution } from './test-output-view-contribution';
+// import { TestOutputViewContribution } from './test-output-view-contribution';
 import { TestOutputUIModel } from './test-output-ui-model';
 import { TestRunTree, TestRunTreeWidget } from './test-run-widget';
-import { TestResultViewContribution } from './test-result-view-contribution';
-import { TEST_RUNS_CONTEXT_MENU, TestRunViewContribution } from './test-run-view-contribution';
+// import { TestResultViewContribution } from './test-result-view-contribution';
+import { TEST_RUNS_CONTEXT_MENU /* , TestRunViewContribution */ } from './test-run-view-contribution';
 import { TestContextKeyService } from './test-context-key-service';
 import { DefaultTestExecutionProgressService, TestExecutionProgressService } from '../test-execution-progress-service';
 import { bindTestPreferences } from '../test-preferences';
