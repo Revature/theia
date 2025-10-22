@@ -45,11 +45,13 @@ export class RunTestsMenuCommandContribution implements CommandContribution {
 export class RunTestsMenuContribution implements MenuContribution {
     registerMenus(menus: MenuModelRegistry): void {
         setTimeout(() => {
-            // Register as a direct menu action (not a submenu) so it executes on click
-            menus.registerMenuAction(MAIN_MENU_BAR, {
-                commandId: RunTestsCommand.id,
-                label: 'Run Tests',
+            const subMenuPath = [...MAIN_MENU_BAR, 'RunTestsMenu'];
+            menus.registerSubmenu(subMenuPath, 'Run Tests', {
                 order: 'zzx' // Order it right before 'Browser' (which is 'zzy')
+            });
+            menus.registerMenuAction(subMenuPath, {
+                commandId: RunTestsCommand.id,
+                order: '0'
             });
         }, 10000);
     }

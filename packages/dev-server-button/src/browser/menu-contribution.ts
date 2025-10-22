@@ -85,11 +85,13 @@ export class BrowserMenuCommandContribution implements CommandContribution {
 export class BrowserMenuContribution implements MenuContribution {
     registerMenus(menus: MenuModelRegistry): void {
         setTimeout(() => {
-            // Register as a direct menu action (not a submenu) so it executes on click
-            menus.registerMenuAction(MAIN_MENU_BAR, {
-                commandId: DevServerCommand.id,
-                label: 'Browser',
+            const subMenuPath = [...MAIN_MENU_BAR, 'DevServerMenu'];
+            menus.registerSubmenu(subMenuPath, 'Browser', {
                 order: 'zzy'
+            });
+            menus.registerMenuAction(subMenuPath, {
+                commandId: DevServerCommand.id,
+                order: '0'
             });
         }, 10000);
     }
